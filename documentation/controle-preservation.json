@@ -1,0 +1,14 @@
+{
+  "fonctions_animation_identiques": [
+    "drawFeatured",
+    "drawArchive",
+    "update",
+    "advance",
+    "stop",
+    "play",
+    "navigate"
+  ],
+  "evenements_et_initialisation_identiques": true,
+  "css_identique_sauf": "object-fit: cover devient contain pour les images",
+  "ordre_numeros_identique": true
+}

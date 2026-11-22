@@ -1,0 +1,3 @@
+const {chromium}=require('../../soupotheque/node_modules/@playwright/test');
+const fs=require('fs');
+(async()=>{const b=await chromium.launch({headless:true,executablePath:'C:/Users/didie/AppData/Local/ms-playwright/chromium-1234/chrome-win64/chrome.exe'});try{const p=await b.newPage();await p.goto('https://bibdoc.culture.gouv.fr/recherche/simple/rech_collection/Arch%C3%A9ologie%20des%20Hauts-de-France',{waitUntil:'domcontentloaded'});for(let i=0;i<4;i++){await new Promise(r=>setTimeout(r,5000));console.log(p.url(),(await p.locator('body').innerText()).slice(0,12000));if(!(await p.title()).includes('bot'))break;}fs.writeFileSync('archeologie-hauts-de-france/sources/bibdoc-browser.html',await p.content());}finally{await b.close()}})();

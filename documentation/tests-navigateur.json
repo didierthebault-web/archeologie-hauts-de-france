@@ -1,0 +1,288 @@
+{
+  "date": "2026-11-22",
+  "checks": [
+    "Intervalle initial réel : 2300 ms, premier groupe de cinq cartes",
+    "Pause sans progression",
+    "Reprise",
+    "Transfert du premier groupe et conservation dans la galerie",
+    "Navigation précédent / suivant conforme à V2",
+    "Redémarrage",
+    "Neuf groupes jusqu’à 41/41 et arrêt final",
+    "41 liens de galerie contrôlés : 39 notices Bibdoc fournies et 2 notices ministère conservées",
+    "41 images locales distinctes décodées, proportions conservées, culture.gouv.fr bloqué",
+    "Ouverture file:// index.html sans chargement JSON externe",
+    "Version autonome ouverte en file://, images embarquées",
+    "Image locale manquante : remplacement explicite"
+  ],
+  "viewports": [
+    {
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "rendu-1920x1080.png",
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "screenshot": "rendu-1366x768.png",
+      "horizontalOverflow": false
+    },
+    {
+      "width": 600,
+      "height": 900,
+      "screenshot": "rendu-600x900.png",
+      "horizontalOverflow": false
+    }
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "images": [
+    {
+      "src": "images/archeologie-047.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-045.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-043.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-041.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-039.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-038.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-037.webp",
+      "width": 797,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-035.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-034.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-033.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-032.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-031.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-030.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-029.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-028.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-027.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-026.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-025.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-023.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-022.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-021.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-020.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-019.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-018.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-017.webp",
+      "width": 1400,
+      "height": 947,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-016.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-015.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-014.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-013.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-012.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-011.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-010.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-009.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-008.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-007.webp",
+      "width": 1400,
+      "height": 947,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-006.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-005.webp",
+      "width": 1400,
+      "height": 947,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-004.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-003.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-002.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    },
+    {
+      "src": "images/archeologie-001.webp",
+      "width": 796,
+      "height": 1076,
+      "fit": "contain"
+    }
+  ],
+  "status": "OK"
+}

@@ -1,0 +1,10 @@
+.tools/
+__pycache__/
+.publish/
+sources/pdf/
+sources/images-originales/
+sources/notices/
+sources/bibdoc-*.html
+autonome.html
+animation-avec-notices.html
+*.zip
