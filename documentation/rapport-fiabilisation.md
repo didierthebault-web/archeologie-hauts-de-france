@@ -55,3 +55,8 @@ index.html + images/ : version web, double-clic et GitHub Pages. autonome.html :
 ## Dernière adaptation demandée
 
 Sélecteur de vitesse retiré ; vitesse unique de 2,3 secondes par carte. Les fonctions de lecture et le gestionnaire de vitesse ont été adaptés uniquement pour fixer cette durée. Les huit fiches intégrées restent accessibles depuis les grandes cartes et la galerie. Les autres notices seront ajoutées ultérieurement.
+
+
+## Enrichissement depuis le PDF des notices
+
+39 fiches internes intégrées (31 nouvelles et huit recontrôlées), avec auteurs, collaborateurs disponibles, date, description, notes, résumés et sujets. Source : les 39 captures du PDF fourni. Correspondances et divergences documentées dans controle-notices.csv ; tests dans tests-notices-completes.json. Seuls les n°45 et 47 restent sans fiche fournie.

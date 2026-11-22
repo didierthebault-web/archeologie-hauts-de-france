@@ -4,6 +4,7 @@ from PIL import Image
 ROOT=Path(__file__).parent
 inv=json.loads((ROOT/'sources/inventory.json').read_text(encoding='utf8'))
 rec=json.loads((ROOT/'sources/recovered.json').read_text(encoding='utf8'))
+notices=json.loads((ROOT/'notices.json').read_text(encoding='utf8')) if (ROOT/'notices.json').exists() else {}
 def csvwrite(name,rows):
  with (ROOT/'documentation'/name).open('w',encoding='utf-8-sig',newline='') as f:
   w=csv.DictWriter(f,fieldnames=list(rows[0]),delimiter=';');w.writeheader();w.writerows(rows)
@@ -28,6 +29,7 @@ for v,r in zip(inv,rec):
  item={'numero':n,'titre':p['title'],'titre_officiel':r['titre_officiel'],'image':r['image'],'type_visuel':'premiere_page_pdf','source_image':r['url_pdf'],'url_publication':r['url_publication'],'url_pdf':r['url_pdf'],'statut_verification':'valide','date_recuperation':'2026-11-22','format':'WebP','largeur':r['width'],'hauteur':r['height'],'observations':note,'credits':f'documentation/credits-{n:03}.txt','sha256':hashlib.sha256((ROOT/r['image']).read_bytes()).hexdigest()}
  notice_links=json.loads((ROOT/'sources/liens-bibdoc.json').read_text(encoding='utf8')) if (ROOT/'sources/liens-bibdoc.json').exists() else {}
  item['url_notice_bibdoc']=notice_links.get(str(n))
+ item['notice']=notices.get(str(n))
  pubs.append(item)
  anomaly='Titre V2 abrégé, sujet concordant.'
  if len(v['notices'])>1: anomaly+=' Deux notices officielles pour le même numéro.'
@@ -51,7 +53,8 @@ html=re.sub(r'<label for="speed">Vitesse</label><select id="speed">.*?</select>'
 html=html.replace("Number($('speed').value)",'2300')
 html=html.replace("$('speed').onchange=()=>{if(playing)play()};",'')
 if (ROOT/'notices-ui.js').exists():
- html=html.replace('</body>', '<script>'+ (ROOT/'notices-ui.js').read_text(encoding='utf8')+'</script></body>')
+ notice_code=(ROOT/'notices-ui.js').read_text(encoding='utf8').replace('const NOTICES_CAPTURE={}; // BUILD_NOTICES','const NOTICES_CAPTURE='+json.dumps(notices,ensure_ascii=False)+';')
+ html=html.replace('</body>', '<script>'+notice_code+'</script></body>')
 (ROOT/'index.html').write_text(html,encoding='utf8')
 # Mêmes données embarquées : index.html fonctionne directement en file://, sans fetch JSON.
 standalone=html

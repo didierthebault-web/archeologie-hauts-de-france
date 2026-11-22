@@ -1,0 +1,9 @@
+{
+  "notices": 39,
+  "checks": [
+    "index.html : 39 fiches centrales, 39 fiches de galerie, contenus et affichage étroit vérifiés",
+    "autonome.html : 39 fiches centrales, 39 fiches de galerie, contenus et affichage étroit vérifiés"
+  ],
+  "errors": [],
+  "status": "OK"
+}

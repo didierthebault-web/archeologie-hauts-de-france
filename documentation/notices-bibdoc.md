@@ -1,20 +1,29 @@
-# Liens vers les notices détaillées Bibdoc
+# Notices bibliographiques intégrées
 
-39 adresses fournies par l'utilisateur associées aux titres correspondants. Le champ url_notice_bibdoc de publications.json conserve l'adresse complète fournie. Les données intégrées dans index.html et autonome.html sont synchronisées.
+39 fiches détaillées sont intégrées dans l'animation, à partir des 39 captures du PDF fourni par l'utilisateur. Cette version ajoute 31 fiches aux huit premières et recontrôle l'ensemble.
 
-Les vignettes de « Collection exposée » ouvrent la notice Bibdoc dans un nouvel onglet, pendant l'animation comme après sa fin. Les grandes cartes gardent leur lien vers le ministère. L'animation et ses commandes sont inchangées.
+Un clic sur une carte portant « Lire la notice » ouvre la fiche dans la page, depuis la zone centrale comme depuis la galerie cumulative. L'animation se met en pause et reprend à la fermeture uniquement si elle était en lecture avant l'ouverture. La vitesse reste fixée à 2,3 secondes par carte.
 
-Deux adresses Bibdoc ne sont pas fournies : n°45, Bavay (trompette romaine), et n°47, Bois d'Olhain. Leurs vignettes ouvrent la notice individuelle du ministère déjà vérifiée. Aucun identifiant Bibdoc n'a été inventé.
+Les fiches présentent le titre, les auteurs, les collaborateurs lorsqu'ils figurent dans la capture, la collectivité éditrice, la coordination, la langue, le dépôt légal, la description matérielle, la collection, les notes bibliographiques, le résumé et les sujets. Les résumés sont reformulés à partir des captures, ce qui est précisé dans la fiche.
 
-Le catalogue refuse l'accès automatisé dans cet environnement. Les correspondances reposent sur les intitulés et adresses fournis par l'utilisateur, complétés pour huit titres par ses captures ; elles ne sont pas déclarées revérifiées en ligne. Le test navigateur contrôle les destinations des 41 liens sans demander au catalogue de s'ouvrir.
+## Sources et données
 
-Incohérences signalées : la capture Bibdoc de Guînes indique n°30, alors que la collection officielle l'identifie n°33 ; le résumé de Laon mentionne un 18e numéro alors que son champ Collection indique n°14. Le slug URL de Ribécourt mentionne « dépôts funéraires » alors que le titre du PDF officiel indique « dépôts non funéraires » : adresse fournie conservée, titre officiel non modifié.
+- notices.json contient les 39 fiches et le numéro de page source de chaque capture.
+- publications.json associe les références aux images, aux liens et aux notices.
+- sources/notices-bibdoc/ contient les captures WebP et les reconnaissances de texte brutes. Ces OCR bruts peuvent contenir des erreurs et ne sont pas les données affichées.
+- Le PDF source est conservé dans sources/notices-bibdoc/Presentation-5.pdf.
+- documentation/controle-notices.csv donne les correspondances et les anomalies.
 
-Voir liens-notices.csv pour la correspondance complète et sources/liens-bibdoc-fournis.txt pour le texte reçu (archive complète).
+Les titres, auteurs, dates et descriptions ont été contrôlés sur les captures. Les erreurs de reconnaissance de caractères ont été corrigées. Les données sont incorporées dans les HTML lors de la construction : aucune connexion à Bibdoc ni requête JSON externe n'est requise pour lire une fiche.
 
-## Huit fiches intégrées dans l’animation
-Les grandes cartes n°14, 31, 32, 33, 34, 35, 37 et 39 ouvrent désormais une fiche interne. Auteurs, éditeur, dépôt légal, description, collection, bibliographie disponible et sujets sont transcrits des captures ; les résumés sont reformulés et cette précision figure dans chaque fiche. Les anomalies Guînes et Laon sont signalées. Pause temporaire et reprise de l’état précédent à la fermeture. Tests dans les deux HTML : documentation/tests-notices.json. Les autres grandes cartes conservent pour le moment leur lien externe. Les vignettes de galerie gardent leurs destinations Bibdoc.
+## Lacunes et divergences
 
+Deux notices ne figurent pas dans le PDF : n°45 (Bavay, trompette romaine) et n°47 (Bois d'Olhain). Aucune fiche n'est inventée ; leurs liens vers le ministère sont conservés.
 
-Complément : mention Lire la notice sur les huit titres ; leurs fiches internes sont aussi accessibles dans la galerie. animation-avec-notices.html est une copie autonome portant un nom distinct pour éviter la confusion avec les versions précédentes.
+Guînes : la capture indique n°30, la série officielle n°33. Laon : le résumé indique 18e alors que la collection indique n°14. Ribécourt : le titre parle de dépôts funéraires, alors que son résumé et le PDF officiel précisent non funéraires. Péronne : la description indique [6] pages et le résumé 8 pages. Étaples : le colophon signale un dépôt légal erroné de 2016, la publication est cataloguée 2019. Le couvent de l'Abbiette : le titre mentionne la fin du XVIIIe siècle et le résumé la fin du XVIIe siècle. Ces divergences sont signalées dans les fiches concernées.
 
+Les liens Bibdoc ont été fournis par l'utilisateur ; l'accès automatisé au catalogue reste refusé. Une nouvelle vérification en ligne des notices n'est donc pas annoncée.
+
+## Vérifications
+
+scripts/check-all-notices.cjs vérifie dans Chromium les 39 fiches depuis la zone centrale et les 39 fiches depuis la galerie, dans index.html et autonome.html, ainsi que le contenu de chaque fiche et l'affichage étroit. Résultats : documentation/tests-notices-completes.json. Le test de l'animation et des 41 couvertures est conservé dans scripts/browser-check.cjs.

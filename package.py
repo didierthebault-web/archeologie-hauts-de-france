@@ -73,6 +73,9 @@ report+='\n\n## Complément : notices Bibdoc\n\n39 liens directs fournis par l�
 report=report.replace('Aucun déploiement GitHub effectué ; compatibilité des chemins préparée, pas de test sur un site GitHub Pages publié.','Publication publique sur GitHub Pages demandée dans la dernière étape ; voir publication-github.md pour le résultat du déploiement.')
 report+='\n\n## Dernière adaptation demandée\n\nSélecteur de vitesse retiré ; vitesse unique de 2,3 secondes par carte. Les fonctions de lecture et le gestionnaire de vitesse ont été adaptés uniquement pour fixer cette durée. Les huit fiches intégrées restent accessibles depuis les grandes cartes et la galerie. Les autres notices seront ajoutées ultérieurement.\n'
 (ROOT/'documentation/rapport-fiabilisation.md').write_text(report,encoding='utf8')
+if (ROOT/'notices.json').exists():
+ with (ROOT/'documentation/rapport-fiabilisation.md').open('a',encoding='utf8') as f:
+  f.write('\n\n## Enrichissement depuis le PDF des notices\n\n39 fiches internes intégrées (31 nouvelles et huit recontrôlées), avec auteurs, collaborateurs disponibles, date, description, notes, résumés et sujets. Source : les 39 captures du PDF fourni. Correspondances et divergences documentées dans controle-notices.csv ; tests dans tests-notices-completes.json. Seuls les n°45 et 47 restent sans fiche fournie.\n')
 readme='''# Archéologie des Hauts-de-France — V2 fiabilisée
 
 Ouvrir index.html par double-clic en conservant le dossier images/ à côté. Aucun accès au ministère nécessaire pour afficher les visuels. Les liens vers les notices demandent une connexion.
@@ -109,6 +112,9 @@ readme+='\n\nLes vignettes de Collection exposée ouvrent 39 notices Bibdoc dans
 readme=readme.replace('Aucun dépôt ni publication n’a été créé lors de cette intervention.','Publication publique demandée ultérieurement : voir documentation/publication-github.md.').replace("Aucun dépôt ni publication n'a été créé lors de cette intervention.",'Publication publique demandée ultérieurement : voir documentation/publication-github.md.')
 readme+='\n\nVersion publique : https://didierthebault-web.github.io/archeologie-hauts-de-france/\nVitesse unique : 2,3 secondes par carte, sans sélecteur. Huit notices bibliographiques intégrées à la page. Les autres seront complétées ultérieurement.\n'
 (ROOT/'README.md').write_text(readme,encoding='utf8')
+if (ROOT/'notices.json').exists():
+ with (ROOT/'README.md').open('a',encoding='utf8') as f:
+  f.write('\n\n## Version enrichie des notices\n\n39 fiches internes, issues des 39 pages du PDF fourni : cliquer sur Lire la notice sur une grande carte ou une vignette. Seules les notices n°45 et 47 restent à fournir. Les données éditables se trouvent dans notices.json ; build.py les incorpore aux HTML. Les sources et les tests sont décrits dans documentation/notices-bibdoc.md.\n')
 from PIL import Image
 with (ROOT/'documentation/inventaire-originaux.csv').open('w',encoding='utf-8-sig',newline='') as f:
  w=csv.writer(f,delimiter=';');w.writerow(['numero','fichier','format','largeur','hauteur','sha256'])

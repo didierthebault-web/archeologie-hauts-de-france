@@ -36,3 +36,8 @@ Les vignettes de Collection exposée ouvrent 39 notices Bibdoc dans un nouvel on
 
 Version publique : https://didierthebault-web.github.io/archeologie-hauts-de-france/
 Vitesse unique : 2,3 secondes par carte, sans sélecteur. Huit notices bibliographiques intégrées à la page. Les autres seront complétées ultérieurement.
+
+
+## Version enrichie des notices
+
+39 fiches internes, issues des 39 pages du PDF fourni : cliquer sur Lire la notice sur une grande carte ou une vignette. Seules les notices n°45 et 47 restent à fournir. Les données éditables se trouvent dans notices.json ; build.py les incorpore aux HTML. Les sources et les tests sont décrits dans documentation/notices-bibdoc.md.
